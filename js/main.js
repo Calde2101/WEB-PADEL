@@ -1,5 +1,5 @@
 /* =========================
-   PCA PÁDEL CLUB - MAIN JS
+   PÁDEL CLUB - MAIN JS
 ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initScrollProgress();
     initClaseTabs();
     initClaseConfigurator();
+    initCustomSelects();
     initCountdown();
     initTilt();
 });
@@ -154,7 +155,7 @@ function initMap() {
 
     if (!mapElement || typeof L === "undefined") return;
 
-    const coords = [40.3008, -3.4380];
+    const coords = [40.4168, -3.7038]; // Cambia estas coordenadas por las de tu club
 
     const map = L.map(mapElement, {
         scrollWheelZoom: false
@@ -167,7 +168,7 @@ function initMap() {
 
     L.marker(coords)
         .addTo(map)
-        .bindPopup("<strong>PCA Pádel Club Arganda</strong><br>Instalaciones municipales de Arganda del Rey")
+        .bindPopup("<strong>Tu Club de Pádel</strong><br>Instalaciones del club")
         .openPopup();
 }
 
@@ -270,7 +271,7 @@ function initContactForm() {
             return;
         }
 
-        const subject = encodeURIComponent(`Contacto web PCA - ${name}`);
+        const subject = encodeURIComponent(`Contacto web - ${name}`);
         const body = encodeURIComponent(
             `Nombre: ${name}\n` +
             `Email: ${email}\n\n` +
@@ -278,7 +279,7 @@ function initContactForm() {
         );
 
         // Cambia este correo por el real del club
-        const clubEmail = "padelclubarganda@gmail.com";
+        const clubEmail = "info@tuclubdepadel.com";
 
         window.location.href = `mailto:${clubEmail}?subject=${subject}&body=${body}`;
     });
@@ -430,6 +431,8 @@ function initClaseConfigurator() {
             }
 
             updateSummary();
+            modalidad.dispatchEvent(new Event("sync"));
+            tipo.dispatchEvent(new Event("sync"));
             document.getElementById("reservar-clase")
                 .scrollIntoView({ behavior: "smooth", block: "center" });
         });
@@ -452,7 +455,7 @@ function initClaseConfigurator() {
         const dias = Array.from(form.querySelectorAll('input[name="dia"]:checked'))
             .map(d => d.value).join(", ") || "Sin preferencia";
 
-        const subject = encodeURIComponent(`Solicitud de clase PCA - ${name}`);
+        const subject = encodeURIComponent(`Solicitud de clase - ${name}`);
         const body = encodeURIComponent(
             `Nueva solicitud de clase/entrenamiento:\n\n` +
             `Nombre: ${name}\n` +
@@ -468,7 +471,7 @@ function initClaseConfigurator() {
             `Estimado: ${sumPrice.textContent}€/mes\n`
         );
 
-        const clubEmail = "padelclubarganda@gmail.com";
+        const clubEmail = "info@tuclubdepadel.com";
         window.location.href = `mailto:${clubEmail}?subject=${subject}&body=${body}`;
     });
 
@@ -546,4 +549,94 @@ function initTilt() {
             card.style.transform = "";
         });
     });
+}
+
+
+/* =========================
+   DESPLEGABLES PERSONALIZADOS
+========================= */
+
+function initCustomSelects() {
+    const form = document.getElementById("claseForm");
+    if (!form) return;
+
+    form.querySelectorAll("select").forEach(setupCustomSelect);
+
+    document.addEventListener("click", () => {
+        document.querySelectorAll(".cselect.open").forEach(w => w.classList.remove("open"));
+    });
+}
+
+function setupCustomSelect(select) {
+    const wrap = document.createElement("div");
+    wrap.className = "cselect";
+    select.parentNode.insertBefore(wrap, select);
+    wrap.appendChild(select);
+    select.classList.add("cselect-native");
+    select.setAttribute("tabindex", "-1");
+
+    const trigger = document.createElement("button");
+    trigger.type = "button";
+    trigger.className = "cselect-trigger";
+    trigger.innerHTML = '<span class="cselect-label"></span><i class="fa-solid fa-chevron-down"></i>';
+    wrap.appendChild(trigger);
+
+    const panel = document.createElement("div");
+    panel.className = "cselect-panel";
+    panel.setAttribute("role", "listbox");
+    wrap.appendChild(panel);
+
+    const label = trigger.querySelector(".cselect-label");
+
+    const syncLabel = () => {
+        const opt = select.options[select.selectedIndex];
+        label.textContent = opt ? opt.textContent : "";
+    };
+
+    const markSelected = () => {
+        panel.querySelectorAll(".cselect-option").forEach(item => {
+            item.classList.toggle("selected", item.dataset.value === select.value);
+        });
+    };
+
+    const buildOptions = () => {
+        panel.innerHTML = "";
+        Array.from(select.options).forEach(opt => {
+            const item = document.createElement("div");
+            item.className = "cselect-option";
+            item.textContent = opt.textContent;
+            item.dataset.value = opt.value;
+            item.setAttribute("role", "option");
+            if (opt.value === select.value) item.classList.add("selected");
+            item.addEventListener("click", () => {
+                select.value = opt.value;
+                select.dispatchEvent(new Event("change", { bubbles: true }));
+                syncLabel();
+                markSelected();
+                wrap.classList.remove("open");
+            });
+            panel.appendChild(item);
+        });
+    };
+
+    trigger.addEventListener("click", event => {
+        event.stopPropagation();
+        const isOpen = wrap.classList.contains("open");
+        document.querySelectorAll(".cselect.open").forEach(w => w.classList.remove("open"));
+        if (isOpen) return;
+        wrap.classList.add("open");
+        const sel = panel.querySelector(".cselect-option.selected");
+        if (sel) sel.scrollIntoView({ block: "nearest" });
+    });
+
+    new MutationObserver(() => {
+        buildOptions();
+        syncLabel();
+    }).observe(select, { childList: true });
+
+    select.addEventListener("change", () => { syncLabel(); markSelected(); });
+    select.addEventListener("sync", () => { syncLabel(); markSelected(); });
+
+    buildOptions();
+    syncLabel();
 }
