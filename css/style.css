@@ -1024,7 +1024,7 @@ textarea {
         padding: 86px 20px;
     }
     .hero {
-        padding: 112px 20px 330px;
+        padding: 112px 20px 90px;
     }
     .cta,
     .btn {
@@ -1169,17 +1169,18 @@ textarea {
 }
 
 .clases-tabs {
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 6px;
+    width: fit-content;
+    max-width: 100%;
     margin: 0 auto 40px;
     padding: 6px;
     border: 1px solid var(--line);
     border-radius: 999px;
     background: rgba(255, 255, 255, .05);
     backdrop-filter: blur(12px);
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .clase-tab {
