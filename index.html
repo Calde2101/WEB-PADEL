@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PCA Pádel Club Arganda: comunidad de pádel en Arganda del Rey. Equipos, torneos, actualidad y reserva de las 8 pistas outdoor municipales.">
+    <meta name="keywords" content="pádel Arganda, club pádel Arganda, pistas pádel Arganda del Rey, PCA Pádel Club Arganda, torneos pádel Arganda">
+    <meta name="theme-color" content="#0c0f12">
+
+    <title>PCA Pádel Club Arganda | Pádel en Arganda del Rey</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+</head>
+
+<body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="nav" aria-label="Navegación principal">
+
+            <a class="logo" href="#inicio">
+                <img src="img/logo.png" alt="PCA Pádel Club">
+                <span>PCA Pádel Club</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#club">Club</a></li>
+                <li><a href="#clases">Clases</a></li>
+                <li><a href="#competiciones">Competición</a></li>
+                <li><a href="#instalaciones">Pistas</a></li>
+                <li><a href="#equipos">Equipos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li>
+                    <a class="nav-cta" href="https://vive.argandadelrey.es/es/venue/view/179#view" target="_blank" rel="noopener">
+                        Reservar pista
+                    </a>
+                </li>
+            </ul>
+
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+                poster="img/instalaciones/1.jpg" aria-hidden="true">
+                <source src="img/video/hero.mp4" type="video/mp4">
+            </video>
+
+            <div class="hero-slider" aria-hidden="true">
+                <div class="slide active" style="background-image:url('img/instalaciones/1.jpg')"></div>
+                <div class="slide" style="background-image:url('img/instalaciones/2.jpg')"></div>
+                <div class="slide" style="background-image:url('img/instalaciones/3.jpg')"></div>
+            </div>
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content" data-aos="fade-up">
+                <p class="eyebrow"><i class="fa-solid fa-location-dot"></i> Arganda del Rey</p>
+                <img src="img/logo.png" class="hero-logo" alt="PCA Pádel Club Arganda">
+                <h1>Pádel de calidad en Arganda del Rey</h1>
+                <p class="subtitle">
+                    PCA Pádel Club reúne a jugadores y equipos de Arganda del Rey en las instalaciones municipales: 8 pistas outdoor, actualidad del club, competición y ambiente de pádel todo el año.
+                </p>
+                <div class="cta">
+                    <a class="btn primary" href="https://vive.argandadelrey.es/es/venue/view/179#view" target="_blank" rel="noopener">
+                        Reservar pista <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a class="btn ghost" href="https://www.instagram.com/padelclubarganda_/" target="_blank" rel="noopener">
+   Ver Instagram
+</a>
+                </div>
+            </div>
+
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="250">
+                <article>
+                    <strong><span class="counter" data-target="8">0</span></strong>
+                    <p>Pistas outdoor</p>
+                </article>
+                <article>
+                    <strong><span class="counter" data-target="10">0</span>+</strong>
+                    <p>Años compitiendo</p>
+                </article>
+                <article>
+                    <strong><span class="counter" data-target="4">0</span></strong>
+                    <p>Equipos PCA</p>
+                </article>
+            </div>
+
+            <a class="hero-scroll" href="#club" aria-label="Bajar">
+                <span class="hero-scroll-dot"></span>
+                <span class="hero-scroll-text">Descubre el club</span>
+            </a>
+        </section>
+
+        <section id="club" class="section">
+            <div class="section-heading" data-aos="fade-up">
+                <p class="eyebrow">Nuestro club</p>
+                <h2>Una comunidad de pádel en Arganda del Rey</h2>
+                <p>PCA nace alrededor de la competición, los entrenamientos y la vida social del pádel. No somos una instalación privada: somos el punto de encuentro de jugadores que disfrutan y compiten en las pistas municipales de Arganda.</p>
+            </div>
+
+            <div class="feature-grid">
+                <article class="feature-card" data-aos="fade-up">
+                    <i class="fa-solid fa-trophy"></i>
+                    <h3>Competición</h3>
+                    <p>Equipos masculinos, femeninos y veteranos con espíritu competitivo y ambiente de club.</p>
+                </article>
+                <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-solid fa-users"></i>
+                    <h3>Comunidad</h3>
+                    <p>Jugadores de diferentes niveles, partidos, resultados, quedadas y actualidad diaria.</p>
+                </article>
+                <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <h3>Reserva municipal</h3>
+                    <p>Las pistas se reservan desde la plataforma oficial del Ayuntamiento de Arganda del Rey.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ==================== CLASES Y ENTRENAMIENTOS ==================== -->
+        <section id="clases" class="section clases-section">
+            <div class="section-heading" data-aos="fade-up">
+                <p class="eyebrow">Formación PCA</p>
+                <h2>Clases y entrenamientos a tu medida</h2>
+                <p>Mejora tu juego en pista o lleva tu físico al siguiente nivel. Elige tu modalidad, configura tu plan y solicita tu plaza en segundos.</p>
+            </div>
+
+            <div class="clases-tabs" data-aos="fade-up" role="tablist">
+                <button class="clase-tab active" data-tab="pista" role="tab" aria-selected="true">
+                    <i class="fa-solid fa-table-tennis-paddle-ball"></i> Clases en pista
+                </button>
+                <button class="clase-tab" data-tab="fisico" role="tab" aria-selected="false">
+                    <i class="fa-solid fa-dumbbell"></i> Entrenamiento físico
+                </button>
+            </div>
+
+            <div class="clases-panels">
+                <div class="clase-panel active" data-panel="pista">
+                    <div class="clases-grid">
+                        <article class="clase-card tilt" data-clase="Iniciación" data-price="12" data-aos="fade-up">
+                            <i class="fa-solid fa-seedling"></i>
+                            <h3>Iniciación</h3>
+                            <p>Aprende la técnica base, reglas y posición. Grupos reducidos para empezar con buen pie.</p>
+                            <div class="clase-foot"><span class="clase-price">Desde 12€<small>/clase</small></span>
+                                <button type="button" class="clase-pick" data-mod="pista">Elegir</button></div>
+                        </article>
+                        <article class="clase-card tilt" data-clase="Perfeccionamiento" data-price="15" data-aos="fade-up" data-aos-delay="80">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <h3>Perfeccionamiento</h3>
+                            <p>Depura golpes, tácticas de pareja y toma de decisiones para dar el salto de nivel.</p>
+                            <div class="clase-foot"><span class="clase-price">Desde 15€<small>/clase</small></span>
+                                <button type="button" class="clase-pick" data-mod="pista">Elegir</button></div>
+                        </article>
+                        <article class="clase-card tilt" data-clase="Clase individual" data-price="30" data-aos="fade-up" data-aos-delay="160">
+                            <i class="fa-solid fa-user"></i>
+                            <h3>Clase individual</h3>
+                            <p>Un profesor solo para ti. Máxima personalización y corrección técnica intensiva.</p>
+                            <div class="clase-foot"><span class="clase-price">Desde 30€<small>/clase</small></span>
+                                <button type="button" class="clase-pick" data-mod="pista">Elegir</button></div>
+                        </article>
+                        <article class="clase-card tilt" data-clase="Tecnificación competición" data-price="20" data-aos="fade-up">
+                            <i class="fa-solid fa-trophy"></i>
+                            <h3>Tecnificación</h3>
+                            <p>Orientada a competición: intensidad, patrones de juego y preparación para torneos.</p>
+                            <div class="clase-foot"><span class="clase-price">Desde 20€<small>/clase</small></span>
+                                <button type="button" class="clase-pick" data-mod="pista">Elegir</button></div>
+                        </article>
+                        <article class="clase-card tilt" data-clase="Escuela infantil" data-price="10" data-aos="fade-up" data-aos-delay="80">
+                            <i class="fa-solid fa-child-reaching"></i>
+                            <h3>Escuela infantil</h3>
+                            <p>Pádel para peques y jóvenes: diversión, coordinación y valores del deporte.</p>
+                            <div class="clase-foot"><span class="clase-price">Desde 10€<small>/clase</small></span>
+                                <button type="button" class="clase-pick" data-mod="pista">Elegir</button></div>
+                        </article>
+                        <article class="clase-card tilt" data-clase="Clase en pareja" data-price="18" data-aos="fade-up" data-aos-delay="160">
+                            <i class="fa-solid fa-user-group"></i>
+                            <h3>Clase en pareja</h3>
+                            <p>Entrena con tu compañero/a de partido y coordinad vuestro juego real.</p>
+                            <div class="clase-foot"><span class="clase-price">Desde 18€<small>/persona</small></span>
+                                <button type="button" class="clase-pick" data-mod="pista">Elegir</button></div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="clase-panel" data-panel="fisico">
+                    <div class="clases-grid">
+                        <article class="clase-card tilt" data-clase="Preparación física pádel" data-price="12" data-aos="fade-up">
+                            <i class="fa-solid fa-person-running"></i>
+                            <h3>Preparación física</h3>
+                            <p>Trabajo específico para pádel: desplazamientos, potencia de golpeo y core.</p>
+                            <div class="clase-foot"><span class="clase-price">Desde 12€<small>/sesión</small></span>
+                                <button type="button" class="clase-pick" data-mod="fisico">Elegir</button></div>
+                        </article>
+                        <article class="clase-card tilt" data-clase="Prevención de lesiones" data-price="12" data-aos="fade-up" data-aos-delay="80">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                            <h3>Prevención y movilidad</h3>
+                            <p>Movilidad articular, propiocepción y rutinas para jugar sin lesiones.</p>
+                            <div class="clase-foot"><span class="clase-price">Desde 12€<small>/sesión</small></span>
+                                <button type="button" class="clase-pick" data-mod="fisico">Elegir</button></div>
+                        </article>
+                        <article class="clase-card tilt" data-clase="Fuerza y potencia" data-price="14" data-aos="fade-up" data-aos-delay="160">
+                            <i class="fa-solid fa-dumbbell"></i>
+                            <h3>Fuerza y potencia</h3>
+                            <p>Programa de fuerza aplicada para pegar más fuerte y aguantar el partido.</p>
+                            <div class="clase-foot"><span class="clase-price">Desde 14€<small>/sesión</small></span>
+                                <button type="button" class="clase-pick" data-mod="fisico">Elegir</button></div>
+                        </article>
+                        <article class="clase-card tilt" data-clase="Resistencia y agilidad" data-price="12" data-aos="fade-up">
+                            <i class="fa-solid fa-bolt"></i>
+                            <h3>Resistencia y agilidad</h3>
+                            <p>Cardio, cambios de dirección y reacción para dominar los puntos largos.</p>
+                            <div class="clase-foot"><span class="clase-price">Desde 12€<small>/sesión</small></span>
+                                <button type="button" class="clase-pick" data-mod="fisico">Elegir</button></div>
+                        </article>
+                        <article class="clase-card tilt" data-clase="Entrenamiento personal 1:1" data-price="28" data-aos="fade-up" data-aos-delay="80">
+                            <i class="fa-solid fa-user-shield"></i>
+                            <h3>Personal 1:1</h3>
+                            <p>Entrenador personal con plan individualizado y seguimiento de tus objetivos.</p>
+                            <div class="clase-foot"><span class="clase-price">Desde 28€<small>/sesión</small></span>
+                                <button type="button" class="clase-pick" data-mod="fisico">Elegir</button></div>
+                        </article>
+                        <article class="clase-card tilt" data-clase="Bono mensual físico" data-price="90" data-aos="fade-up" data-aos-delay="160">
+                            <i class="fa-solid fa-calendar-week"></i>
+                            <h3>Bono mensual</h3>
+                            <p>Plan completo de acondicionamiento: varias sesiones semanales al mejor precio.</p>
+                            <div class="clase-foot"><span class="clase-price">Desde 90€<small>/mes</small></span>
+                                <button type="button" class="clase-pick" data-mod="fisico">Elegir</button></div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Configurador / formulario dinámico -->
+            <div class="booking" id="reservar-clase" data-aos="fade-up">
+                <div class="booking-form">
+                    <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Diseña tu plan</h3>
+                    <p class="booking-sub">Configura tu clase y te contactamos para confirmar horario y plaza.</p>
+
+                    <form id="claseForm">
+                        <div class="field">
+                            <label for="modalidad">Modalidad</label>
+                            <select id="modalidad" name="modalidad" required>
+                                <option value="pista">Clases en pista</option>
+                                <option value="fisico">Entrenamiento físico</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="tipo">Tipo de clase</label>
+                            <select id="tipo" name="tipo" required></select>
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="nivel">Nivel</label>
+                                <select id="nivel" name="nivel">
+                                    <option>Iniciación</option>
+                                    <option>Intermedio</option>
+                                    <option>Avanzado</option>
+                                    <option>Competición</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="formato">Formato</label>
+                                <select id="formato" name="formato">
+                                    <option value="grupo" data-mult="1">Grupo</option>
+                                    <option value="pareja" data-mult="1.4">Pareja</option>
+                                    <option value="individual" data-mult="2.2">Individual</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label>Días preferidos</label>
+                            <div class="chips" id="diasChips">
+                                <label class="chip"><input type="checkbox" name="dia" value="Lunes"><span>L</span></label>
+                                <label class="chip"><input type="checkbox" name="dia" value="Martes"><span>M</span></label>
+                                <label class="chip"><input type="checkbox" name="dia" value="Miércoles"><span>X</span></label>
+                                <label class="chip"><input type="checkbox" name="dia" value="Jueves"><span>J</span></label>
+                                <label class="chip"><input type="checkbox" name="dia" value="Viernes"><span>V</span></label>
+                                <label class="chip"><input type="checkbox" name="dia" value="Sábado"><span>S</span></label>
+                                <label class="chip"><input type="checkbox" name="dia" value="Domingo"><span>D</span></label>
+                            </div>
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="franja">Franja horaria</label>
+                                <select id="franja" name="franja">
+                                    <option>Mañana</option>
+                                    <option>Mediodía</option>
+                                    <option>Tarde</option>
+                                    <option>Noche</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="frecuencia">Frecuencia</label>
+                                <select id="frecuencia" name="frecuencia">
+                                    <option value="1">1 día / semana</option>
+                                    <option value="2">2 días / semana</option>
+                                    <option value="3">3 días / semana</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="cname">Nombre</label>
+                                <input type="text" id="cname" name="cname" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="field">
+                                <label for="cphone">Teléfono</label>
+                                <input type="tel" id="cphone" name="cphone" placeholder="Tu teléfono" required>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="cemail">Email</label>
+                            <input type="email" id="cemail" name="cemail" placeholder="tucorreo@email.com" required>
+                        </div>
+
+                        <button class="btn-send" type="submit">
+                            <span>Solicitar mi plaza</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <aside class="booking-summary" aria-live="polite">
+                    <span class="booking-tag">Tu plan PCA</span>
+                    <h4 id="sumTipo">Clase en pista</h4>
+                    <ul class="summary-list">
+                        <li><i class="fa-solid fa-layer-group"></i> <span>Modalidad</span><b id="sumMod">En pista</b></li>
+                        <li><i class="fa-solid fa-signal"></i> <span>Nivel</span><b id="sumNivel">Iniciación</b></li>
+                        <li><i class="fa-solid fa-people-group"></i> <span>Formato</span><b id="sumFormato">Grupo</b></li>
+                        <li><i class="fa-solid fa-calendar-day"></i> <span>Días</span><b id="sumDias">—</b></li>
+                        <li><i class="fa-solid fa-clock"></i> <span>Frecuencia</span><b id="sumFrec">1 día / semana</b></li>
+                    </ul>
+                    <div class="summary-price">
+                        <span>Estimado desde</span>
+                        <strong><span id="sumPrice">12</span>€<small>/mes</small></strong>
+                    </div>
+                    <p class="summary-note">Precio orientativo. La confirmación final la realiza el club según disponibilidad.</p>
+                </aside>
+            </div>
+        </section>
+
+        <!-- ==================== COMPETICIONES ==================== -->
+        <section id="competiciones" class="section comp-section dark">
+            <div class="section-heading" data-aos="fade-up">
+                <p class="eyebrow">Competición</p>
+                <h2>El alma del club está en la pista</h2>
+                <p>Ligas, torneos sociales y campeonatos abiertos durante todo el año. Compite, sube en el ranking y vive el pádel PCA al máximo.</p>
+            </div>
+
+            <div class="comp-featured" data-aos="zoom-in">
+                <div class="comp-featured-glow"></div>
+                <div class="comp-featured-info">
+                    <span class="comp-badge"><i class="fa-solid fa-fire"></i> Próxima gran cita</span>
+                    <h3>Torneo Absoluto PCA · Verano 2026</h3>
+                    <p>El torneo más importante del año en las 8 pistas municipales. Categorías masculina, femenina y mixta. Cuadros por nivel y premios para los campeones.</p>
+                    <div class="comp-meta">
+                        <span><i class="fa-solid fa-calendar-day"></i> 15 Ago 2026</span>
+                        <span><i class="fa-solid fa-location-dot"></i> Pistas municipales</span>
+                        <span><i class="fa-solid fa-medal"></i> 3 categorías</span>
+                    </div>
+                    <div class="countdown" data-deadline="2026-08-15T09:00:00" aria-label="Cuenta atrás para el torneo">
+                        <div class="cd-unit"><strong data-cd="days">00</strong><span>Días</span></div>
+                        <div class="cd-unit"><strong data-cd="hours">00</strong><span>Horas</span></div>
+                        <div class="cd-unit"><strong data-cd="minutes">00</strong><span>Min</span></div>
+                        <div class="cd-unit"><strong data-cd="seconds">00</strong><span>Seg</span></div>
+                    </div>
+                    <div class="comp-cta">
+                        <a class="btn primary" href="#reservar-clase">Quiero inscribirme <i class="fa-solid fa-arrow-right"></i></a>
+                        <a class="btn ghost" href="https://www.instagram.com/padelclubarganda_/" target="_blank" rel="noopener">Ver bases</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comp-columns">
+                <div class="comp-calendar" data-aos="fade-up">
+                    <h3 class="comp-col-title"><i class="fa-solid fa-calendar-days"></i> Calendario de competiciones</h3>
+                    <article class="comp-item">
+                        <div class="comp-date"><span class="cd-day">28</span><span class="cd-mon">Jul</span></div>
+                        <div class="comp-item-body">
+                            <h4>Torneo Social Mensual</h4>
+                            <p>Formato express por parejas. Abierto a todos los socios.</p>
+                        </div>
+                        <span class="comp-status open">Inscripción abierta</span>
+                    </article>
+                    <article class="comp-item">
+                        <div class="comp-date"><span class="cd-day">15</span><span class="cd-mon">Ago</span></div>
+                        <div class="comp-item-body">
+                            <h4>Torneo Absoluto PCA</h4>
+                            <p>El gran torneo del verano. 3 categorías por nivel.</p>
+                        </div>
+                        <span class="comp-status open">Inscripción abierta</span>
+                    </article>
+                    <article class="comp-item">
+                        <div class="comp-date"><span class="cd-day">21</span><span class="cd-mon">Sep</span></div>
+                        <div class="comp-item-body">
+                            <h4>Liga Interna de Otoño</h4>
+                            <p>Competición por equipos durante 8 jornadas.</p>
+                        </div>
+                        <span class="comp-status soon">Próximamente</span>
+                    </article>
+                    <article class="comp-item">
+                        <div class="comp-date"><span class="cd-day">12</span><span class="cd-mon">Oct</span></div>
+                        <div class="comp-item-body">
+                            <h4>Open Femenino PCA</h4>
+                            <p>Torneo abierto femenino con cuadro por niveles.</p>
+                        </div>
+                        <span class="comp-status soon">Próximamente</span>
+                    </article>
+                </div>
+
+                <div class="comp-ranking" data-aos="fade-up" data-aos-delay="120">
+                    <h3 class="comp-col-title"><i class="fa-solid fa-ranking-star"></i> Ranking del club</h3>
+                    <ol class="ranking-list">
+                        <li class="rank-item top1">
+                            <span class="rank-pos">1</span>
+                            <div class="rank-info"><b>Pareja Coello / Tapia</b><small>Masculino A</small></div>
+                            <span class="rank-pts">1420 pts</span>
+                        </li>
+                        <li class="rank-item top2">
+                            <span class="rank-pos">2</span>
+                            <div class="rank-info"><b>Pareja Galán / Yanguas</b><small>Masculino A</small></div>
+                            <span class="rank-pts">1360 pts</span>
+                        </li>
+                        <li class="rank-item top3">
+                            <span class="rank-pos">3</span>
+                            <div class="rank-info"><b>Equipo Femenino A</b><small>Femenino</small></div>
+                            <span class="rank-pts">1180 pts</span>
+                        </li>
+                        <li class="rank-item">
+                            <span class="rank-pos">4</span>
+                            <div class="rank-info"><b>Masculino B</b><small>Cantera</small></div>
+                            <span class="rank-pts">1040 pts</span>
+                        </li>
+                        <li class="rank-item">
+                            <span class="rank-pos">5</span>
+                            <div class="rank-info"><b>Veteranos PCA</b><small>Veteranos</small></div>
+                            <span class="rank-pts">960 pts</span>
+                        </li>
+                    </ol>
+                    <a class="btn ghost small" href="#equipos">Ver equipos <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="reservas" class="section dark">
+            <div class="reserve-card" data-aos="zoom-in">
+                <div>
+                    <p class="eyebrow">Reserva online</p>
+                    <h2>Reserva una de las 8 pistas outdoor</h2>
+                    <p>Accede a la plataforma municipal de reservas de Arganda del Rey para consultar disponibilidad, horarios y realizar tu reserva de pista.</p>
+                </div>
+                <a class="btn primary large" href="https://vive.argandadelrey.es/es/venue/view/179#view" target="_blank" rel="noopener">
+                    Ir a reservas <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+        </section>
+
+        <section id="instalaciones" class="section">
+            <div class="section-heading" data-aos="fade-up">
+                <p class="eyebrow">Instalaciones municipales</p>
+                <h2>8 pistas outdoor para jugar en Arganda</h2>
+                <p>Espacio deportivo al aire libre para entrenamientos, partidos, competiciones y encuentros entre jugadores del club.</p>
+            </div>
+
+            <div class="instalaciones-grid">
+                <article class="inst-card" data-aos="zoom-in">
+                    <img src="img/instalaciones/1.jpg" alt="Pistas de pádel municipales en Arganda del Rey">
+                    <div class="inst-overlay">
+                        <h3>Pistas principales</h3>
+                        <p>Partidos, entrenamientos y competición.</p>
+                    </div>
+                </article>
+                <article class="inst-card" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="img/instalaciones/2.jpg" alt="Zona de entrenamiento de pádel en Arganda">
+                    <div class="inst-overlay">
+                        <h3>Zona de juego outdoor</h3>
+                        <p>8 pistas municipales disponibles por reserva.</p>
+                    </div>
+                </article>
+                <article class="inst-card" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="img/instalaciones/3.jpg" alt="Ambiente de club de pádel en Arganda">
+                    <div class="inst-overlay">
+                        <h3>Ambiente PCA</h3>
+                        <p>Vida de club, equipos y actualidad.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="equipos" class="section dark">
+            <div class="section-heading" data-aos="fade-up">
+                <p class="eyebrow">Competición</p>
+                <h2>Equipos PCA</h2>
+                <p>El corazón del club está en sus equipos. Competimos, entrenamos y representamos a PCA con identidad propia.</p>
+            </div>
+
+            <div class="teams-grid">
+                <article class="team-card" data-aos="fade-up">
+                    <span>01</span>
+                    <h3>Masculino A</h3>
+                    <p>Equipo competitivo principal.</p>
+                </article>
+                <article class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <span>02</span>
+                    <h3>Masculino B</h3>
+                    <p>Competición, progresión y cantera.</p>
+                </article>
+                <article class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <span>03</span>
+                    <h3>Femenino A</h3>
+                    <p>Equipo femenino PCA.</p>
+                </article>
+                <article class="team-card" data-aos="fade-up" data-aos-delay="300">
+                    <span>04</span>
+                    <h3>Veteranos</h3>
+                    <p>Experiencia, nivel y espíritu competitivo.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="torneos" class="section">
+            <div class="section-heading" data-aos="fade-up">
+                <p class="eyebrow">Actualidad</p>
+                <h2>Torneos, resultados y vida del club</h2>
+                <p>Sigue nuestras novedades en Instagram: resultados de equipos, torneos, convocatorias y momentos PCA.</p>
+            </div>
+
+            <div class="social-block" data-aos="fade-up">
+                <div class="insta-grid">
+
+                    <a href="https://www.instagram.com/padelclubarganda_/" target="_blank" rel="noopener">
+                        <img src="img/Instagram/post1.png" alt="Instagram PCA" loading="lazy">
+                    </a>
+
+                    <a href="https://www.instagram.com/padelclubarganda_/" target="_blank" rel="noopener">
+                        <img src="img/Instagram/post2.png" alt="Instagram PCA" loading="lazy">
+                    </a>
+
+                    <a href="https://www.instagram.com/padelclubarganda_/" target="_blank" rel="noopener">
+                        <img src="img/Instagram/post3.png" alt="Instagram PCA" loading="lazy">
+                    </a>
+
+                    <a href="https://www.instagram.com/padelclubarganda_/" target="_blank" rel="noopener">
+                        <img src="img/Instagram/post4.png" alt="Instagram PCA" loading="lazy">
+                    </a>
+
+                    <a href="https://www.instagram.com/padelclubarganda_/" target="_blank" rel="noopener">
+                        <img src="img/Instagram/port5.png" alt="Instagram PCA" loading="lazy">
+                    </a>
+
+                    <a href="https://www.instagram.com/padelclubarganda_/" target="_blank" rel="noopener">
+                        <img src="img/Instagram/post6.png" alt="Instagram PCA" loading="lazy">
+                    </a>
+
+                </div>
+                <div class="social-content">
+                    <i class="fa-brands fa-instagram"></i>
+                    <h3>Instagram PCA</h3>
+                    <p>La actualidad real del club está en nuestro Instagram.</p>
+                    <a class="btn ghost" href="https://www.instagram.com/padelclubarganda_/" target="_blank" rel="noopener">Ver Instagram</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="jugadores" class="section players-section">
+
+            <div class="section-header">
+                <span class="eyebrow">JUGADORES</span>
+                <h2>Perfiles destacados</h2>
+                <p>Jugadores representativos del club y referentes dentro del proyecto PCA.</p>
+            </div>
+
+            <div class="players-grid">
+
+                <article class="player-card blue">
+                    <img src="img/jugadores/coello.jpg" alt="Arturo Coello">
+                    <div class="player-info">
+                        <span>REVÉS</span>
+                        <h3>ARTURO<br>COELLO</h3>
+                    </div>
+                </article>
+
+                <article class="player-card green">
+                    <img src="img/jugadores/galan.jpg" alt="Ale Galán">
+                    <div class="player-info">
+                        <span>DRIVE</span>
+                        <h3>ALE<br>GALÁN</h3>
+                    </div>
+                </article>
+
+                <article class="player-card blue">
+                    <img src="img/jugadores/tapia.jpg" alt="Agustín Tapia">
+                    <div class="player-info">
+                        <span>DRIVE</span>
+                        <h3>AGUSTÍN<br>TAPIA</h3>
+                    </div>
+                </article>
+
+                <article class="player-card green">
+                    <img src="img/jugadores/yanguas.jpg" alt="Mike Yanguas">
+                    <div class="player-info">
+                        <span>REVÉS</span>
+                        <h3>MIKE<br>YANGUAS</h3>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+        <section id="ubicacion" class="section">
+            <div class="section-heading" data-aos="fade-up">
+                <p class="eyebrow">Ubicación</p>
+                <h2>¿Dónde jugamos?</h2>
+                <p>Instalaciones municipales de Arganda del Rey. Usa el mapa para orientarte y el botón de reservas para consultar disponibilidad.</p>
+            </div>
+            <div id="map" data-aos="zoom-in"></div>
+        </section>
+
+        <section id="contacto" class="section dark">
+            <div class="section-heading" data-aos="fade-up">
+                <p class="eyebrow">Contacto</p>
+                <h2>Habla con PCA</h2>
+                <p>Para información sobre equipos, actualidad o colaboración con el club, escríbenos.</p>
+            </div>
+
+            <div class="contact-grid">
+                <form id="contactForm" data-aos="fade-up">
+                    <input type="text" name="name" placeholder="Nombre" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Mensaje" rows="5" required></textarea>
+                    <button class="btn-send" type="submit">
+                        <span>Enviar mensaje</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                    <p class="form-note">El formulario abrirá tu cliente de correo para enviar el mensaje.</p>
+                </form>
+
+                <aside class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Enlaces rápidos</h3>
+                    <a href="https://vive.argandadelrey.es/es/venue/view/179#view" target="_blank" rel="noopener"><i class="fa-solid fa-calendar-check"></i> Reservar pista</a>
+                    <a href="https://www.instagram.com/padelclubarganda_/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram PCA</a>
+                    <a href="#ubicacion"><i class="fa-solid fa-location-dot"></i> Ver ubicación</a>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <img src="img/logo.png" alt="Logo PCA Pádel Club Arganda">
+                <p>PCA Pádel Club Arganda</p>
+            </div>
+            <p>© 2026 PCA Pádel Club. Comunidad de pádel en Arganda del Rey.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
