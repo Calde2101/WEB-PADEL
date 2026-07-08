@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initCustomSelects();
     initCountdown();
     initTilt();
+    initReserva();
 });
 
 
@@ -161,9 +162,10 @@ function initMap() {
         scrollWheelZoom: false
     }).setView(coords, 15);
 
-    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19,
-        attribution: "&copy; OpenStreetMap"
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
+        maxZoom: 20,
+        subdomains: "abcd",
+        attribution: "&copy; OpenStreetMap &copy; CARTO"
     }).addTo(map);
 
     L.marker(coords)
@@ -547,6 +549,50 @@ function initTilt() {
 
         card.addEventListener("mouseleave", () => {
             card.style.transform = "";
+        });
+    });
+}
+
+
+/* =========================
+   BOTÓN DE RESERVA (Playtomic)
+   PC -> web · Móvil -> app (con fallback a web)
+========================= */
+
+function initReserva() {
+    const buttons = document.querySelectorAll(".js-reserva");
+    if (!buttons.length) return;
+
+    const isMobile = /android|iphone|ipad|ipod/i.test(navigator.userAgent);
+
+    buttons.forEach(btn => {
+        const webUrl = btn.dataset.web || btn.getAttribute("href");
+        const appUrl = btn.dataset.app;
+
+        btn.addEventListener("click", event => {
+            if (!isMobile || !appUrl) return; // En PC deja el comportamiento normal (abre la web)
+
+            event.preventDefault();
+
+            let fellBack = false;
+
+            // Si la app no está instalada, abrimos la web pasado un breve margen
+            const fallback = setTimeout(() => {
+                fellBack = true;
+                window.location.href = webUrl;
+            }, 1200);
+
+            // Si la app abre, la pestaña se oculta y cancelamos el fallback
+            const onHide = () => {
+                if (document.hidden) clearTimeout(fallback);
+            };
+            document.addEventListener("visibilitychange", onHide, { once: true });
+
+            window.location.href = appUrl;
+
+            window.addEventListener("pagehide", () => {
+                if (!fellBack) clearTimeout(fallback);
+            }, { once: true });
         });
     });
 }
